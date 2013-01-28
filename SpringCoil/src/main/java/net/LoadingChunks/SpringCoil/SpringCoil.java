@@ -38,16 +38,20 @@ public class SpringCoil extends JavaPlugin {
 
 	public void onEnable() { 
 		this.registerCoilAPI();
-		
 		this.registerPluginChannels();
 	}
 	
 	public void registerCoilAPI() {
-		if(this.coil == null)
-		{
-			Coil api = new SpringCoilAPI(this);
-			Bukkit.getServicesManager().register(Coil.class, api, this, ServicePriority.Normal);
-			this.coil = api;
+		try {
+			if(this.coil == null)
+			{
+				Coil api = new SpringCoilAPI(this);
+				Bukkit.getServicesManager().register(Coil.class, api, this, ServicePriority.Normal);
+				this.coil = api;
+			}
+		} catch(Exception e) {
+			this.getLogger().severe("An error occurred while trying to register the SpringCoil class:");
+			e.printStackTrace();
 		}
 	}
 	
