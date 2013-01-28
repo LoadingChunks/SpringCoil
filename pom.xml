@@ -89,7 +89,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <skip>true</true>
                 <version>3.0</version>
                 <configuration>
                     <source>1.7</source>
