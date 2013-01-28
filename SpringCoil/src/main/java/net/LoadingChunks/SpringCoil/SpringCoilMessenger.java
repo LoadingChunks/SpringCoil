@@ -34,16 +34,16 @@ public class SpringCoilMessenger {
 	
 	public void sendPluginMessage(String channel) {
 		ByteArrayOutputStream b = prepareMessage(channel, null);
-		Bukkit.getServer().sendPluginMessage(this.plugin, channel, b.toByteArray());
+		Bukkit.getServer().sendPluginMessage(this.plugin, "BungeeCord", b.toByteArray());
 	}
 
 	public void sendPluginMessage(String channel, String message) {
 		ByteArrayOutputStream b = prepareMessage(channel, message);
-		Bukkit.getServer().sendPluginMessage(this.plugin, channel, b.toByteArray());
+		Bukkit.getServer().sendPluginMessage(this.plugin, "BungeeCord", b.toByteArray());
 	}
 	
 	public void sendPluginMessage(Player p, String channel, String message) {
 		ByteArrayOutputStream b = prepareMessage(channel, message);
-		p.sendPluginMessage(this.plugin, channel, b.toByteArray());
+		p.sendPluginMessage(this.plugin, "BungeeCord", b.toByteArray());
 	}
 }
