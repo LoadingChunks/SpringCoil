@@ -22,8 +22,10 @@ public class SpringCoilMessenger {
 		
 		try {
 			out.writeUTF(WordUtils.capitalize(channel));
+			if(channel.equalsIgnoreCase("Forward"))
+				out.writeShort(message.getBytes().length);
 			if(message != null)
-				out.writeUTF(message);
+				out.write(message.getBytes());
 		} catch (IOException ex) {
 			Bukkit.getLogger().severe("SpringCoil: Error writing plugin message stream! THIS SHOULD NOT HAPPEN! - Please contact developer ben@loadingchunks.net.");
 			ex.printStackTrace();
