@@ -27,7 +27,7 @@ public class SpringCoilMessenger {
 				out.writeUTF(messages[1]);
 				out.writeUTF(messages[0]);
 				out.writeShort(messages[2].getBytes().length);
-				out.write(messages[2].getBytes());
+				out.writeUTF(messages[2]);
 			} else {
 				out.writeUTF(messages[0]);
 			}
