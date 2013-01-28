@@ -1,6 +1,6 @@
 name: SpringCoil
 main: net.LoadingChunks.SpringCoil.SpringCoil
-version: 0.1
+version: 0.3
 
 commands:
    command:
