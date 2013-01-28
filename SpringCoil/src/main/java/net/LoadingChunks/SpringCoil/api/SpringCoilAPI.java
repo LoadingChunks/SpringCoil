@@ -16,33 +16,42 @@ public class SpringCoilAPI implements Coil {
 	}
 
 	@Override
-	public ArrayList<String> getPlayerList(String server) {
-		return null;
+	public void askPlayerList(String server) {
+		this.plugin.getMessenger().sendPluginMessage("PlayerList");
 	}
 
 	@Override
-	public int getPlayerCount(String server) {
-		return 0;
+	public void askPlayerCount(String server) {
+		this.plugin.getMessenger().sendPluginMessage("PlayerCount");
 	}
 
 	@Override
-	public ArrayList<String> getServerList() {
-		return null;
+	public void askServerList() {
+		this.plugin.getMessenger().sendPluginMessage("GetServers");
 	}
 
 	@Override
-	public void sendToServer(String server, String command) {
-
+	public void sendToServer(String server, String channel, String command) {
+		this.plugin.getMessenger().sendPluginMessage("Forward", channel + " " + server + " " + command);
 	}
 
 	@Override
-	public void sendToAllServers(String command) {
-
+	public void sendToAllServers(String channel, String command) {
+		this.plugin.getMessenger().sendPluginMessage("Forward", channel + " ALL " + command);
 	}
 
 	@Override
 	public void connectPlayerToServer(Player player, String server) {
-
+		this.plugin.getMessenger().sendPluginMessage(player, "Connect", server);
 	}
 
+	@Override
+	public void sendRawData(String channel, String data) {
+		this.plugin.getMessenger().sendPluginMessage(channel, data);
+	}
+
+	@Override
+	public void sendRawData(Player player, String channel, String data) {
+		this.plugin.getMessenger().sendPluginMessage(player, channel, data);
+	}
 }

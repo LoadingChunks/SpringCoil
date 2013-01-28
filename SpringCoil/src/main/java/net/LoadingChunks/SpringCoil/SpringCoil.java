@@ -28,6 +28,7 @@ public class SpringCoil extends JavaPlugin {
 	
 	// Message Listener
 	private final SpringCoilMessageListener messageListener = new SpringCoilMessageListener(this);
+	private final SpringCoilMessenger messenger = new SpringCoilMessenger(this);
 
 	public void onDisable() {
 		// add any code you want to be executed when your plugin is disabled
@@ -51,5 +52,13 @@ public class SpringCoil extends JavaPlugin {
 	public void registerPluginChannels() {
         Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
         Bukkit.getMessenger().registerIncomingPluginChannel(this, "BungeeCord", messageListener);
+	}
+	
+	public SpringCoilMessageListener getListener() {
+		return this.messageListener;
+	}
+	
+	public SpringCoilMessenger getMessenger() {
+		return this.messenger;
 	}
 }

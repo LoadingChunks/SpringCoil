@@ -5,15 +5,19 @@ import java.util.ArrayList;
 import org.bukkit.entity.Player;
 
 public interface Coil {
-	public ArrayList<String> getPlayerList(String server);
+	public void askPlayerList(String server);
 
-	public int getPlayerCount(String server);
+	public void askPlayerCount(String server);
 	
-	public ArrayList<String> getServerList();
+	public void askServerList();
 
-	public void sendToServer(String server, String command);
+	public void sendToServer(String server, String channel, String command);
 
-	public void sendToAllServers(String command);
+	public void sendToAllServers(String channel, String command);
 
 	public void connectPlayerToServer(Player player, String server);
+	
+	public void sendRawData(String channel, String data);
+	
+	public void sendRawData(Player player, String channel, String data);
 }
