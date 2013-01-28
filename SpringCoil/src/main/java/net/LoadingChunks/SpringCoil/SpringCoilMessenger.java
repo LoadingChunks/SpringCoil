@@ -25,7 +25,7 @@ public class SpringCoilMessenger {
 			if(channel.equalsIgnoreCase("Forward"))
 			{
 				out.writeUTF(messages[1]);
-				out.writeUTF(messages[2]);
+				out.writeUTF(messages[0]);
 				out.writeShort(messages[2].getBytes().length);
 				out.write(messages[2].getBytes());
 			} else {
