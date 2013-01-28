@@ -2,9 +2,18 @@ package net.LoadingChunks.SpringCoil.api;
 
 import java.util.ArrayList;
 
+import net.LoadingChunks.SpringCoil.SpringCoil;
+
 import org.bukkit.entity.Player;
 
-public class SpringCoilAPI implements CoilInterface {
+public class SpringCoilAPI implements Coil {
+	
+	SpringCoil plugin;
+	
+	public SpringCoilAPI(SpringCoil plugin)
+	{
+		this.plugin = plugin;
+	}
 
 	@Override
 	public ArrayList<String> getPlayerList(String server) {

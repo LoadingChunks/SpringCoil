@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.bukkit.entity.Player;
 
-public interface CoilInterface {
+public interface Coil {
 	public ArrayList<String> getPlayerList(String server);
 
 	public int getPlayerCount(String server);
