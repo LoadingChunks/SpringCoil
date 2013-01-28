@@ -30,12 +30,12 @@ public class SpringCoilAPI implements Coil {
 
 	@Override
 	public void sendToServer(String server, String channel, String command) {
-		this.plugin.getMessenger().sendPluginMessage("Forward", channel + " " + server + " " + command);
+		this.plugin.getMessenger().sendPluginMessage("Forward", new String[]{channel,server,command});
 	}
 
 	@Override
 	public void sendToAllServers(String channel, String command) {
-		this.plugin.getMessenger().sendPluginMessage("Forward", channel + " ALL " + command);
+		this.plugin.getMessenger().sendPluginMessage("Forward", new String[]{channel,"ALL",command});
 	}
 
 	@Override
