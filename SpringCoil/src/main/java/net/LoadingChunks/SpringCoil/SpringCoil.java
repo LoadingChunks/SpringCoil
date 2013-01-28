@@ -17,6 +17,8 @@ package net.LoadingChunks.SpringCoil;
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -28,6 +30,7 @@ public class SpringCoil extends JavaPlugin {
 	// Message Listener
 	private final SpringCoilMessageListener messageListener = new SpringCoilMessageListener(this);
 	private final SpringCoilMessenger messenger = new SpringCoilMessenger(this);
+	private  ArrayList<CoilListener> listeners = new ArrayList<CoilListener>();
 
 	public void onDisable() {
 		// add any code you want to be executed when your plugin is disabled
@@ -59,5 +62,10 @@ public class SpringCoil extends JavaPlugin {
 	
 	public SpringCoilMessenger getMessenger() {
 		return this.messenger;
+	}
+	
+	public void addListener(CoilListener l)
+	{
+		this.listeners.add(l);
 	}
 }

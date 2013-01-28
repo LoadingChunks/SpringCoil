@@ -18,4 +18,6 @@ public interface Coil {
 	public void sendRawData(String channel, String data);
 	
 	public void sendRawData(Player player, String channel, String data);
+	
+	public void registerListener(CoilListener listener);
 }

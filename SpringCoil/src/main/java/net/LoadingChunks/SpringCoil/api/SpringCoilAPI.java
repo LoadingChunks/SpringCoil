@@ -52,4 +52,9 @@ public class SpringCoilAPI implements Coil {
 	public void sendRawData(Player player, String channel, String data) {
 		this.plugin.getMessenger().sendPluginMessage(player, channel, data);
 	}
+	
+	@Override
+	public void registerListener(CoilListener listener) {
+		this.plugin.addListener(listener);
+	}
 }

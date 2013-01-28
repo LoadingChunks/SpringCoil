@@ -14,6 +14,6 @@ public class SpringCoilMessageListener implements PluginMessageListener {
 
 	@Override
 	public void onPluginMessageReceived(String channel, Player player, byte[] message) {
-		
+		this.plugin.getLogger().info("Got Plugin Message on " + channel + " from " + player + " messge was: " + message.toString());
 	}
 }
