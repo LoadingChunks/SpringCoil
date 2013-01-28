@@ -1,8 +1,0 @@
-name: SpringCoil
-main: net.LoadingChunks.SpringCoil.SpringCoil
-version: 0.1
-
-commands:
-   command:
-      description: A Command
-      usage: /<command> 

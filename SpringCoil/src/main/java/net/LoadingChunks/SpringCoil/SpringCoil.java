@@ -18,7 +18,6 @@ package net.LoadingChunks.SpringCoil;
  */
 
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.LoadingChunks.SpringCoil.api.*;

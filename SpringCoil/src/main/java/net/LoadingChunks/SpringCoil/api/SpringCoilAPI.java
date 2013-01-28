@@ -1,7 +1,5 @@
 package net.LoadingChunks.SpringCoil.api;
 
-import java.util.ArrayList;
-
 import net.LoadingChunks.SpringCoil.SpringCoil;
 
 import org.bukkit.entity.Player;
