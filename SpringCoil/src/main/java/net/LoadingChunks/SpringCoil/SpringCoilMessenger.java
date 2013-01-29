@@ -78,6 +78,13 @@ public class SpringCoilMessenger {
 		Bukkit.getServer().sendPluginMessage(this.plugin, "BungeeCord", b.toByteArray());
 	}
 	
+	public void sendPluginMessage(Player p, String channel, String[] messages) {
+		ByteArrayOutputStream b = prepareMessage(channel, messages);
+		this.plugin.getLogger().info("Preparing to send BungeeCord message with subchannel " + channel + " and message \"" + messages[2] + "\"");
+		this.plugin.getLogger().info("Byte Array is: " + b.toString());
+		p.sendPluginMessage(this.plugin, "BungeeCord", b.toByteArray());
+	}
+	
 	public void sendPluginMessage(Player p, String channel, String message) {
 		ByteArrayOutputStream b = prepareMessage(channel, message);
 		this.plugin.getLogger().info("Preparing to send BungeeCord message with subchannel " + channel + " from " + p.getName() + " with and message \"" + message + "\"");

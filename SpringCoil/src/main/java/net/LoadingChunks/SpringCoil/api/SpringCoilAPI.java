@@ -57,4 +57,14 @@ public class SpringCoilAPI implements Coil {
 	public void registerListener(CoilListener listener) {
 		this.plugin.addListener(listener);
 	}
+
+	@Override
+	public void sendToServerAsPlayer(Player p, String server, String channel, String command) {
+		this.plugin.getMessenger().sendPluginMessage(p, "Forward", new String[]{channel,server,command});
+	}
+
+	@Override
+	public void sendToAllServersAsPlayer(Player p, String server, String channel, String command) {
+		this.plugin.getMessenger().sendPluginMessage(p, "Forward", new String[]{channel,"ALL",command});
+	}
 }

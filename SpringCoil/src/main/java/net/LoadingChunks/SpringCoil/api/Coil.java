@@ -10,8 +10,10 @@ public interface Coil {
 	public void askServerList();
 
 	public void sendToServer(String server, String channel, String command);
-
 	public void sendToAllServers(String channel, String command);
+	
+	public void sendToServerAsPlayer(Player p, String server, String channel, String command);
+	public void sendToAllServersAsPlayer(Player p, String server, String channel, String command);
 
 	public void connectPlayerToServer(Player player, String server);
 	
